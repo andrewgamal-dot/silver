@@ -69,7 +69,7 @@ const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }) => {
     if (!isOpen) return null;
 
     return (
-        <div className="modal-overlay">
+        <div className="modal-overlay" onClick={(e) => { if (e.target.className === 'modal-overlay') onClose(); }}>
             <div className="signup-modal">
                 <button className="close-button" onClick={onClose}>×</button>
                 
