@@ -55,15 +55,6 @@ function RoadmapCard({ roadmap, onViewRoadmap, onTrackProgress }) {
                         </li>
                     ))}
                 </ul>
-                {roadmap.steps.length > 3 && (
-                    <button 
-                        onClick={toggleExpand} 
-                        className="expand-toggle"
-                        aria-label={isExpanded ? "Show less" : "Show more"}
-                    >
-                        {isExpanded ? "Show less" : "Show more"}
-                    </button>
-                )}
             </div>
             <div className="roadmap-actions">
                 <button 
