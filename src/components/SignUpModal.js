@@ -107,8 +107,8 @@ const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }) => {
                                     value={formData.phone}
                                     onChange={handleChange}
                                     placeholder="Mobile Number"
-                                    pattern="[0-9]{10}"
-                                    title="Please enter a valid 10-digit mobile number"
+                                    pattern="[0-9]{11}"
+                                    title="Please enter a valid 11-digit mobile number"
                                     required
                                     disabled={isLoading}
                                 />
