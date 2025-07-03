@@ -27,6 +27,13 @@ const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }) => {
         setError('');
         setIsLoading(true);
 
+        // Confirm password must match password
+        if (formData.password !== formData.confirmPassword) {
+            setError('Passwords do not match');
+            setIsLoading(false);
+            return;
+        }
+
         try {
             const response = await fetch('http://localhost:5000/api/auth/signup', {
                 method: 'POST',
@@ -98,6 +105,8 @@ const SignUpModal = ({ isOpen, onClose, onSwitchToLogin }) => {
                                     placeholder="Email"
                                     required
                                     disabled={isLoading}
+                                    pattern="^[^@\s]+@gmail\.com$"
+                                    title="Please enter valid email address"
                                 />
                             </div>
                             <div className="form-group">
